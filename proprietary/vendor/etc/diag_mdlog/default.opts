@@ -1,0 +1,1 @@
+--filemsm=/vendor/etc/diag_mdlog/Connection_Issues_V16.cfg --output=/data/vendor/diag_mdlog/logs --optimized --size=10 --number=9 --sync=60

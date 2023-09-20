@@ -1,0 +1,11 @@
+#********************************************************************
+#Copyright (c) 2020 Qualcomm Technologies, Inc.
+#All Rights Reserved.
+#Confidential and Proprietary - Qualcomm Technologies, Inc.
+#********************************************************************
+
+#start seemp_healthd daemon
+service seemp_healthd /vendor/bin/seemp_healthd
+   class late_start
+   user system
+   group system

@@ -1,0 +1,101 @@
+// @file mot_mya_classif.proto
+//
+// Defines message types for the Motorola Mya classif algorithm
+//
+// Copyright (c) 2018 Motorola Mobility
+// All Rights Reserved.
+// Confidential and Proprietary - Motorola Mobility
+
+syntax = "proto2";
+import "nanopb.proto";
+import "sns_std_sensor.proto";
+
+// Mot Mya Classif Algo
+// Performs Interpolation curation and hysteresis for WIFI scan results
+
+// Sensor Attribute Requirements:
+// SNS_STD_SENSOR_ATTRID_TYPE: "mot_mya_classif"
+// SNS_STD_SENSOR_ATTRID_STREAM_TYPE: SNS_STD_SENSOR_STREAM_TYPE_ON_CHANGE
+
+// Stream Requests:
+// - SNS_STD_SENSOR_MSGID_SNS_STD_ON_CHANGE_CONFIG is used to enable the sensor
+
+// Message IDs for Mot Mya Classif algo
+enum mot_mya_classif_msgid {
+  option (nanopb_enumopt).long_names = false;
+
+  // Uses message: mot_mya_algo_update_req
+  MOT_MYA_CLASSIF_MSGID_CLASSIF_UPDATE = 776;
+
+  // Uses message: mot_mya_classif_event
+  MOT_MYA_CLASSIF_MSGID_CLASSIF_EVENT = 777;
+}
+
+
+// Algo ID for Mot Mya Classif Algorithm
+// This enum needs to be in same order as per IMaya.hal
+enum mot_mya_algo_id
+{
+  option (nanopb_enumopt).long_names = false;
+
+  MOT_MYA_ALGO_ID_NONE             = 0;
+  MOT_MYA_ALGO_ID_CELL_LOG         = 1;
+  MOT_MYA_ALGO_ID_CELL_CLASSIF     = 2;
+  MOT_MYA_ALGO_ID_WIFI_PRE_CLASSIF = 3;
+  MOT_MYA_ALGO_ID_OTHER            = 4;
+}
+
+// Algo commands for Mot Mya Classif Algorithm
+enum mot_mya_algo_cmd
+{
+  option (nanopb_enumopt).long_names = false;
+
+  MOT_MYA_ALGO_CMD_DATA_NONE                    = 0;
+  MOT_MYA_ALGO_CMD_DATA_BOOT_STRAP_FIRST_PACKET = 1;
+  MOT_MYA_ALGO_CMD_DATA_BOOT_STRAP_CONT_PACKET  = 2;
+  MOT_MYA_ALGO_CMD_DATA_BOOT_STRAP_LAST_PACKET  = 3;
+  MOT_MYA_ALGO_CMD_DATA_TEST_MODE_FIRST_PACKET  = 4;
+  MOT_MYA_ALGO_CMD_DATA_TEST_MODE_CONT_PACKET   = 5;
+  MOT_MYA_ALGO_CMD_DATA_TEST_MODE_LAST_PACKET   = 6;
+  MOT_MYA_ALGO_CMD_DATA_APPS_SCAN_POLICY_SET    = 7;
+  MOT_MYA_ALGO_CMD_DATA_APPS_SCAN_POLICY_REVOKE = 8;
+  MOT_MYA_ALGO_CMD_DATA_FLUSH_RESET_WIFI_CELL   = 9;
+  MOT_MYA_ALGO_CMD_DATA_CURRENT_RESULTS         = 10;
+  MOT_MYA_ALGO_CMD_DATA_DUMP_DATA_TABLE         = 11;
+  MOT_MYA_ALGO_CMD_DATA_SSID_SCAN_TABLE         = 12;
+  MOT_MYA_ALGO_CMD_DATA_CHANNEL_SCAN_TABLE      = 13;
+  MOT_MYA_ALGO_CMD_DATA_SCAN_REGULAR            = 14;
+  MOT_MYA_ALGO_CMD_DATA_PAUSE                   = 15;
+  MOT_MYA_ALGO_CMD_DATA_RESUME                  = 16;
+  MOT_MYA_ALGO_CMD_DATA_LAST                    = 17;
+}
+
+message mot_mya_algo_update_req
+{
+  // algo id identifies the maya algorithm
+  required mot_mya_algo_id algo_id = 2;
+
+  // algo cmd identifies a sub-command to the maya algorithm
+  required mot_mya_algo_cmd algo_cmd = 3;
+
+  // Must be set to number of bytes in data
+  required uint32 data_len = 4;
+
+  // Bootstrap data coming from APPS for algo
+  optional bytes data = 5;
+}
+
+message mot_mya_classif_event
+{
+  // algo id identifies the maya algorithm
+  required mot_mya_algo_id algo_id = 2;
+
+  // algo cmd identifies a sub-command to the maya algorithm
+  required mot_mya_algo_cmd algo_cmd = 3;
+
+  // Must be set to number of bytes in data
+  required uint32 data_len = 4;
+
+  // Output data from SH to APPS
+  optional bytes output_data = 5;
+}

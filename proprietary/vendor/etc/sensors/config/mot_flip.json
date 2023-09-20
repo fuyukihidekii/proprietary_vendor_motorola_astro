@@ -1,0 +1,35 @@
+{
+  "config":
+  {
+    "hw_platform": ["MTP", "Dragon", "Surf"],
+    "soc_id": ["336", "347", "360"]
+  },
+  "mot_flip":{
+    "owner": "mot_flip",
+    ".params":{
+      "owner": "mot_flip",
+
+      "flip_det_en_gpio":{ "type": "int", "ver": "0",
+        "data": "28"
+      },
+      "flip_det_out_gpio":{ "type": "int", "ver": "0",
+        "data": "27"
+      },
+      "flip_det_en_gpio_ischip":{ "type": "int", "ver": "0",
+        "data": "0"
+      },
+      "flip_det_out_gpio_ischip":{ "type": "int", "ver": "0",
+        "data": "0"
+      },
+      "flip_state_gpio":{ "type": "int", "ver": "0",
+        "data": "133"
+      },
+      "num_rail":{ "type": "int", "ver": "0",
+         "data": "1"
+      },
+      "vddio_rail":{ "type": "str", "ver": "0",
+         "data": "/pmic/client/sensor_vddio"
+      }
+    }
+  }
+}

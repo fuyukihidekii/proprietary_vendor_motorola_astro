@@ -1,0 +1,61 @@
+{
+  "config": {
+     "hw_platform": ["HDK", "MTP", "Dragon", "Surf", "IDP", "QRD"],
+     "soc_id": ["361", "339", "365", "360"],
+     "panel": ["djn_nt36525b_video_display"]
+  },
+  "stk3a5x_0_platform":{
+    "owner": "sns_stk3a5x",
+    ".ps":{
+      "owner": "sns_stk3a5x",
+      ".fac_cal":{
+        "owner": "sns_stk3a5x",
+        "near_threshold":{ "type": "flt", "ver": "0",
+          "data": "950.0"
+        },
+        "far_threshold":{ "type": "flt", "ver": "0",
+          "data": "750.0"
+        },
+        "ctir_config":{ "type": "flt", "ver": "0",
+          "data": "0.0"
+        },
+        "cover":{ "type": "flt", "ver": "0",
+          "data": "1300.0"
+        },
+        "uncover":{ "type": "flt", "ver": "0",
+          "data": "500.0"
+        },
+        "default_near_threshold":{ "type": "flt", "ver": "10101010",
+          "data": "950.0"
+        },
+        "default_far_threshold":{ "type": "flt", "ver": "10101010",
+          "data": "750.0"
+        },
+        "default_factor":{ "type": "flt", "ver": "0",
+          "data": "1000.0"
+        },
+        "delta2":{ "type": "flt", "ver": "0",
+          "data": "450.0"
+        },
+        "delta3":{ "type": "flt", "ver": "0",
+          "data": "250.0"
+        },
+        "factor":{ "type": "flt", "ver": "0",
+          "data": "1000.0"
+        },
+        "high_coeff":{ "type": "flt", "ver": "0",
+          "data": "0.54"
+        },
+        "low_coeff":{ "type": "flt", "ver": "0",
+          "data": "0.26"
+        },
+        "default_cover":{ "type": "flt", "ver": "10101010",
+          "data": "1300.0"
+        },
+        "default_uncover":{ "type": "flt", "ver": "10101010",
+          "data": "500.0"
+        }
+      }
+    }
+  }
+}
