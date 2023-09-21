@@ -33,7 +33,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/astro/proprietary/lib64/vendor.goodix.hardware.biometrics.fingerprint@3.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.goodix.hardware.biometrics.fingerprint@3.0.so \
     vendor/motorola/astro/proprietary/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so \
     vendor/motorola/astro/proprietary/lib64/vendor.qti.hardware.wifi.keystore@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.qti.hardware.wifi.keystore@1.0.so \
-    vendor/motorola/astro/proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk:$(TARGET_COPY_OUT_SYSTEM_EXT)/app/QtiTelephonyService/QtiTelephonyService.apk \
     vendor/motorola/astro/proprietary/system_ext/bin/wfdservice:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/wfdservice \
     vendor/motorola/astro/proprietary/system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.0-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.hardware.qccsyshal@1.0-service.rc \
     vendor/motorola/astro/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
@@ -332,15 +331,9 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/astro/proprietary/system_ext/lib64/vendor.qti.latency@2.0.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/vendor.qti.latency@2.0.so \
     vendor/motorola/astro/proprietary/system_ext/lib64/vendor.qti.qspmhal@1.0.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/vendor.qti.qspmhal@1.0.so \
     vendor/motorola/astro/proprietary/system_ext/lib64/vendor.qti.voiceprint@1.0.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/vendor.qti.voiceprint@1.0.so \
-    vendor/motorola/astro/proprietary/system_ext/priv-app/ims/ims.apk:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/ims/ims.apk \
     vendor/motorola/astro/proprietary/system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/ims/lib/arm64/libimscamera_jni.so \
     vendor/motorola/astro/proprietary/system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/ims/lib/arm64/libimsmedia_jni.so \
-    vendor/motorola/astro/proprietary/system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk \
-    vendor/motorola/astro/proprietary/vendor/app/CACertService/CACertService.apk:$(TARGET_COPY_OUT_VENDOR)/app/CACertService/CACertService.apk \
-    vendor/motorola/astro/proprietary/vendor/app/CneApp/CneApp.apk:$(TARGET_COPY_OUT_VENDOR)/app/CneApp/CneApp.apk \
     vendor/motorola/astro/proprietary/vendor/app/CneApp/lib/arm64/libvndfwk_detect_jni.qti.so:$(TARGET_COPY_OUT_VENDOR)/app/CneApp/lib/arm64/libvndfwk_detect_jni.qti.so \
-    vendor/motorola/astro/proprietary/vendor/app/IWlanService/IWlanService.apk:$(TARGET_COPY_OUT_VENDOR)/app/IWlanService/IWlanService.apk \
-    vendor/motorola/astro/proprietary/vendor/app/TimeService/TimeService.apk:$(TARGET_COPY_OUT_VENDOR)/app/TimeService/TimeService.apk \
     vendor/motorola/astro/proprietary/vendor/bin/ATFWD-daemon:$(TARGET_COPY_OUT_VENDOR)/bin/ATFWD-daemon \
     vendor/motorola/astro/proprietary/vendor/bin/KmInstallKeybox:$(TARGET_COPY_OUT_VENDOR)/bin/KmInstallKeybox \
     vendor/motorola/astro/proprietary/vendor/bin/KmValidateKeybox:$(TARGET_COPY_OUT_VENDOR)/bin/KmValidateKeybox \
@@ -2306,3 +2299,12 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/astro/proprietary/vendor/radio/qcril_database/upgrade/7_version_qcrildb.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/7_version_qcrildb.sql \
     vendor/motorola/astro/proprietary/vendor/radio/qcril_database/upgrade/8_version_qcrildb.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/8_version_qcrildb.sql \
     vendor/motorola/astro/proprietary/vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/9_version_qcrildb.sql
+
+PRODUCT_PACKAGES += \
+    QtiTelephonyService \
+    ims \
+    qcrilmsgtunnel \
+    CACertService \
+    IWlanService \
+    CneApp \
+    TimeService
